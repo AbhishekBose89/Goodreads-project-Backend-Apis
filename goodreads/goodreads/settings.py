@@ -77,8 +77,11 @@ WSGI_APPLICATION = "goodreads.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "djongo",
+        "NAME": "goodreads",
+        "HOST": "localhost",
+        "PORT": "27017",
+        "AUTH_SOURCE":"admin"
     }
 }
 

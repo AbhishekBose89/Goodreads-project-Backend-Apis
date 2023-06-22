@@ -1,3 +1,4 @@
+from typing import Required
 from rest_framework import serializers
 from .models import Book, BookReview, User
 
@@ -16,6 +17,9 @@ class BookReviewSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(required=False)
+
     class Meta:
         model = User
-        fields = "__all__"
+        fields = ["email", "password", "name"]
+        

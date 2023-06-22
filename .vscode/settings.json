@@ -3,5 +3,5 @@
 		"editor.defaultFormatter": "ms-python.black-formatter"
 	},
 	"python.formatting.provider": "none",
-	"cSpell.words": ["goodreads", "Harmen", "restapi", "signin"]
+	"cSpell.words": ["djongo", "goodreads", "Harmen", "restapi", "signin"]
 }

@@ -4,6 +4,9 @@ from .views import (
     BookList,
     BookReview,
     BookReviewUpdate,
+    BookReviewView,
+    BookSearch,
+    CreateBook,
     Reviews,
     BookReviewDelete,
     UserSignUp,
@@ -16,7 +19,7 @@ urlpatterns = [
     path("books/<int:book_id>/", BookDetails.as_view(), name="book details"),
     path(
         "books/<int:book_id>/reviews/",
-        csrf_exempt(BookReview.as_view()),
+        csrf_exempt(BookReviewView.as_view()),
         name="book review",
     ),
     path(
@@ -32,4 +35,6 @@ urlpatterns = [
     ),
     path("users/signup/", csrf_exempt(UserSignUp.as_view()), name="user signup"),
     path("users/signin/", csrf_exempt(UserSignIn.as_view()), name="user signin"),
+    path("books/create/", csrf_exempt(CreateBook.as_view()), name="create-book"),
+    path("books/search/", BookSearch.as_view(), name="search-book"),
 ]
